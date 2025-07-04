@@ -1,0 +1,14 @@
+<svg width="44.000000" height="44.000000" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip1_365">
+			<rect id="ic-instagram" rx="0.000000" width="43.119999" height="43.119999" transform="translate(0.440000 0.440000)" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<rect id="ic-instagram" rx="0.000000" width="43.119999" height="43.119999" transform="translate(0.440000 0.440000)" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip1_365)">
+		<path id="Vector" d="M31.5 3L12.5 3C7.27 3 3 7.27 3 12.5L3 31.5C3 36.72 7.27 41 12.5 41L31.5 41C36.72 41 41 36.72 41 31.5L41 12.5C41 7.27 36.72 3 31.5 3ZM22 29.91C17.62 29.91 14.08 26.37 14.08 22C14.08 17.62 17.62 14.08 22 14.08C26.37 14.08 29.91 17.62 29.91 22C29.91 26.37 26.37 29.91 22 29.91ZM32.29 14.08C30.97 14.08 29.91 13.01 29.91 11.7C29.91 10.39 30.97 9.33 32.29 9.33C33.6 9.33 34.66 10.39 34.66 11.7C34.66 13.01 33.6 14.08 32.29 14.08Z" fill="#282828" fill-opacity="1.000000" fill-rule="nonzero"/>
+	</g>
+</svg>

@@ -1,13 +1,31 @@
-
+import AllProducts from '../../pages/AllProducts/AllProducts'
+import Cart from '../../pages/Cart/Cart'
+import Categories from '../../pages/Categories/Categories'
+import DiscountedProducts from '../../pages/DiscountedProducts/DiscountedProducts'
+import Homepage from '../../pages/HomePage/Homepage'
+import NotFound from '../../pages/NotFound/NotFound'
 import '../../styles/App.css'
+import Footer from '../Footer/Footer'
+import Header from '../Header/Header'
+import { Routes, Route } from 'react-router-dom'
+
+
+
 
 function App() {
-  
-
   return (
-    <>
-     <h1>final project</h1>
-    </>
+    <div className='App'>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Homepage/>} />
+        <Route path="/categories" element={<Categories />} />
+        <Route path="/products" element={<AllProducts />} />
+        <Route path="/discount" element={<DiscountedProducts />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="*" element={<NotFound/>} />
+      </Routes>
+      <Footer />
+    </div>
   )
 }
 

@@ -1,0 +1,21 @@
+.header {
+    width: 100vw;
+    padding: 30px 40px;
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+}
+.links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+.link {
+    
+}
+.activeLink {
+    color: rgb(20, 20, 244);
+    font-size: 20px;
+
+}
