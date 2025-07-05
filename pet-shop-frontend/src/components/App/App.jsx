@@ -9,21 +9,20 @@ import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 import { Routes, Route } from 'react-router-dom'
 
-
-
-
 function App() {
   return (
-    <div className='App'>
+    <div className="App">
       <Header />
-      <Routes>
-        <Route path="/" element={<Homepage/>} />
-        <Route path="/categories" element={<Categories />} />
-        <Route path="/products" element={<AllProducts />} />
-        <Route path="/discount" element={<DiscountedProducts />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="*" element={<NotFound/>} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/categories" element={<Categories />} />
+          <Route path="/products" element={<AllProducts />} />
+          <Route path="/discount" element={<DiscountedProducts />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
       <Footer />
     </div>
   )
