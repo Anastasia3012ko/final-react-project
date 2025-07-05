@@ -1,0 +1,33 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  list-style: none;
+  max-width: 316px;
+  width: 100%;
+  border: 1px solid rgb(221, 221, 221);
+  border-radius: 12px;
+}
+.image {
+  max-width: 316px;
+  width: 100%;
+  height: 284px;
+  border-radius: 12px 12px 0 0;
+  border: 1px solid rgb(221, 221, 221);
+}
+.par,
+.sales {
+  font-size: 20px;
+  font-weight: 500;
+  width: 252px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.price {
+  font-size: 40px;
+  font-weight: 600;
+}
+.sale {
+}
