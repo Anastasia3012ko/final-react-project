@@ -1,7 +1,7 @@
 .header {
     padding: 30px 0;
     width: 94.5%;
-   
+    margin-bottom: 40px; 
 }
 .nav {
     display: flex;
