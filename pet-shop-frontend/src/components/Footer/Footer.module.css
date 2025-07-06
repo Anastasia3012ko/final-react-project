@@ -17,22 +17,23 @@
   gap: 40px;
 }
 .contactOne {
-  background-color: rgb(241, 243, 244);
-  border-radius: 12px;
+  background-color: var(--color-background-gray);
+  border-radius: var(--border-radius);
   padding: 32px;
   max-width: 780px;
   width: 100%;
 }
 .contactTwo {
-  background-color: rgb(241, 243, 244);
-  border-radius: 12px;
+  background-color: var(--color-background-gray);
+  border-radius: var(--border-radius);
   padding: 32px;
   max-width: 548px;
   width: 100%;
 }
 .par {
-  color: rgb(139, 139, 139);
-  font-size: 20px;
+  color: var(--text-color-secondary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight);
   margin-bottom: 16px;
 }
 

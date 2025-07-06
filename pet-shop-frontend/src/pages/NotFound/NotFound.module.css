@@ -1,0 +1,15 @@
+.errorPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  margin: 80px auto;
+}
+.par {
+  text-align: center;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight);
+  line-height: 130%;
+  color: var(--font-size-secondary);
+}

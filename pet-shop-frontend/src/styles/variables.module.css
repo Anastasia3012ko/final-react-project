@@ -1,0 +1,12 @@
+:root {
+  --primary-color: rgb(13, 80, 255);
+  --text-color: rgb(40, 40, 40);
+  --text-color-secondary: rgb(139, 139, 139);
+  --color-background-gray: rgb(241, 243, 244);
+  --font-size-base: 20px;
+  --font-size-h3: 64px;
+  --font-size-h4: 40px;
+  --font-weight: 500;
+  --border-radius: 12px;
+  --border-radius-small: 6px;
+}

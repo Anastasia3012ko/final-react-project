@@ -12,7 +12,12 @@
     align-items: center;
     gap: 35px;
 }
+.link {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight);
+}
 .activeLink {
-    color: rgb(20, 20, 244);
-    font-size: 20px;
+    color: var(--primary-color);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight);
 }
