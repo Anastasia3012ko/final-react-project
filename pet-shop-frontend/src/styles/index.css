@@ -17,8 +17,16 @@ a {
   cursor: pointer;
   color: var(--text-color);
 }
-.ul {
+button {
+  cursor: pointer;
+  border: none;
+  font-family: 'Montserrat', sans-serif; 
+}
+li {
   list-style: none;
+}
+h1 {
+  font-size: var(--font-size-h1);
 }
 h3 {
   font-size: var(--font-size-h3);

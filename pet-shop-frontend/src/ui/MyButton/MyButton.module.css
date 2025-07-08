@@ -3,7 +3,8 @@
   padding-block: 16px;
   padding-inline: 56px;
   font-size: var(--font-size-base);
-  font-weight: 600;
+  font-weight: 500;
+  
   color: white;
   background-color: var(--primary-color);
   border: none;

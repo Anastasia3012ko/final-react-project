@@ -6,6 +6,7 @@ import styles from './Product.module.css'
 import { fetchProductById } from '../../redux/slices/productsSlice'
 import { calculateDiscount } from '../../utils/calculateDiscount'
 import MyButton from '../../ui/MyButton/MyButton'
+import Counter from '../../components/Counter/Counter'
 
 const Product = () => {
   const { productId } = useParams()
@@ -48,11 +49,12 @@ const Product = () => {
               <div className={styles.discount}>-{discount}%</div>
             </>
           ) : (
-            <h5 className={styles.price}>${productById.price}</h5>
+            <h3 className={styles.price}>${productById.price}</h3>
           )}
         </div>
 
         <div className={styles.addToCart}>
+          <Counter/>
           <MyButton>Add to car</MyButton>
         </div>
 

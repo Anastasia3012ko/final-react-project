@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 
 
 const Categories = () => {
-  const { categories } = useSelector(state => state.categories)
+  const { categories, loading, error } = useSelector(state => state.categories)
   const dispatch = useDispatch()
 
   console.log(categories)
@@ -16,8 +16,12 @@ const Categories = () => {
     dispatch(fetchCategories())
   }, [dispatch])
 
-
-
+if(loading) {
+  return <p>Loading...</p>
+}
+if(error) {
+  return <h4>Error: {error}</h4>
+}
   return (
     <div className={styles.wrapper}>
       <h3>Categories</h3>

@@ -1,16 +1,17 @@
 .nav {
-    padding-block: 8px;
-    max-width: 118px;
-    width: 100%;
-    color: rgb(139, 139, 139);
-    border: 2px solid rgb(139, 139, 139);
-    border-radius: 6px;
-    font-size: 16px;
-    font-weight: 500;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  max-width: 150px;
+  width: 100%;
+  color: rgb(139, 139, 139);
+  border: 2px solid rgb(139, 139, 139);
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  padding-block: 8px;
+  padding-inline: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .nav:active {
-    color: rgb(40, 40, 40);
+  color: rgb(40, 40, 40);
 }
