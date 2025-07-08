@@ -6,6 +6,7 @@
 }
 body {
    font-family: 'Montserrat', sans-serif; 
+   font-size: var(--font-size-base);
 }
 main {
   flex: 1;
@@ -15,6 +16,9 @@ a {
   text-decoration: none;
   cursor: pointer;
   color: var(--text-color);
+}
+.ul {
+  list-style: none;
 }
 h3 {
   font-size: var(--font-size-h3);

@@ -4,6 +4,9 @@
   gap: 40px;
   margin-bottom: 105px;
 }
+.item {
+  list-style: none;
+}
 .list {
   display: flex;
   flex-wrap: wrap;

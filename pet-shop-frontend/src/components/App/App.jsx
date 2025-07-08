@@ -7,29 +7,27 @@ import DiscountedProducts from '../../pages/DiscountedProducts/DiscountedProduct
 import Homepage from '../../pages/HomePage/Homepage'
 import NotFound from '../../pages/NotFound/NotFound'
 import '../../styles/App.css'
-import Footer from '../Footer/Footer'
-import Header from '../Header/Header'
 import { Routes, Route } from 'react-router-dom'
 import Layout from '../Layout/Layout'
 
 function App() {
   return (
     <div className="App">
-      <Layout>
+      
         <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/categories" element={<Categories />} />
+          <Route path="/" element={<Layout><Homepage /></Layout>} />
+          <Route path="/categories" element={<Layout><Categories /></Layout>} />
           <Route
-            path=".categories/:categoryId"
-            element={<CategoryProducts />}
+            path="/categories/:categoryId"
+            element={<Layout><CategoryProducts /></Layout>}
           />
-          <Route path="/products" element={<AllProducts />} />
-          <Route path="/products/:productId" element={<Product />} />
-          <Route path="/discount" element={<DiscountedProducts />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/products" element={<Layout><AllProducts /></Layout>} />
+          <Route path="/products/:productId" element={<Layout><Product /></Layout>} />
+          <Route path="/discount" element={<Layout><DiscountedProducts /></Layout>} />
+          <Route path="/cart" element={<Layout><Cart /></Layout>} />
+          <Route path="*" element={<Layout><NotFound /></Layout>} />
         </Routes>
-      </Layout>
+     
     </div>
   )
 }

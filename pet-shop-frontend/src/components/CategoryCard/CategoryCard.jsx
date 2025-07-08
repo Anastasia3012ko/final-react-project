@@ -3,10 +3,10 @@ import styles from './CategoryCard.module.css'
 
 const CategoryCard = ({ image, title }) => {
   return (
-    <li className={styles.item} >
+    <div className={styles.item} >
       <img className={styles.image} src={image} alt="category image" />
       <p className={styles.par}>{title}</p>
-    </li>
+    </div>
   )
 }
 
