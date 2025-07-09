@@ -28,6 +28,8 @@ const Product = () => {
     productById.discont_price
   )
 
+
+
   return (
     <div className={styles.wrapper}>
 
