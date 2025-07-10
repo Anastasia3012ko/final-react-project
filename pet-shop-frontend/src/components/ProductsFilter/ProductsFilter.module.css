@@ -1,0 +1,38 @@
+.filter {
+  width: 100%;
+  display: flex;
+  gap: 40px;
+}
+.filterPrice {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.par {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+}
+.input {
+  max-width: 112px;
+  width: 100%;
+  padding-inline: 16px;
+}
+.input, .select {
+  border: 1px solid rgb(221, 221, 221);
+  border-radius: var(--border-radius-small);
+  font-size: 16px;
+  font-weight: 500;
+  padding-block: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.input::placeholder, option {
+  color: var(--text-color-secondary);
+}
+
+.select {
+    max-width: 200px;
+    width: 100%;
+     padding-inline: 16px 32px;
+}
