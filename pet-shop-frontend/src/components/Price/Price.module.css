@@ -1,0 +1,16 @@
+.cost {
+  display: flex;
+  gap: 16px;
+}
+.price {
+  font-size: var(--font-size-h4);
+  font-weight: 600;
+}
+.sale {
+  align-self: flex-end;
+  padding-bottom: 8px;
+  color: var(--text-color-secondary);
+  text-decoration: line-through;
+    font-size: var(--font-size-base);
+  font-weight: 500;
+}

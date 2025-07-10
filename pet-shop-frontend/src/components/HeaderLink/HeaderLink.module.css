@@ -3,8 +3,6 @@
   align-items: center;
 }
 .line {
-  max-width: 830px;
-  width: 100%;
   min-height: 1px;
   background-color: rgb(221, 221, 221);
   flex-grow: 1;

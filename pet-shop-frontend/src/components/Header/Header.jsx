@@ -3,8 +3,10 @@ import styles from './Header.module.css'
 import Logo from '../../assets/icons/logo.svg'
 import Basket from '../../assets/icons/basket.svg'
 import { NavLink } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 const Header = () => {
+  const items = useSelector(state => state.cart.items)
   return (
     <div className={styles.header}>
       <nav className={styles.nav}>
@@ -50,7 +52,9 @@ const Header = () => {
             All sales
           </NavLink>
         </div>
-        <NavLink
+        <div className={styles.cart}>
+          <div className={(items.length !== 0) ? styles.countProducts : styles.block}>{items.length}</div>
+          <NavLink
           to="/cart"
           className={({ isActive }) =>
             isActive ? styles.activeLink : styles.link
@@ -58,6 +62,8 @@ const Header = () => {
         >
           <img src={Basket} alt="cart" />
         </NavLink>
+        </div>
+        
       </nav>
     </div>
   )

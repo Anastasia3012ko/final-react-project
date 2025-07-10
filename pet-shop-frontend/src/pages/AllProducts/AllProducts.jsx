@@ -31,6 +31,7 @@ const AllProducts = () => {
                   title={product.title}
                   price={product.price}
                   sale={product.discont_price}
+                  product={product}
                 />
               </Link>
             </li>

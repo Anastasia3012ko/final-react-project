@@ -10,16 +10,19 @@ const Homepage = () => {
   return (
     <div className={styles.wrapper}>
       <Banner />
-      <div className={styles.categories}>
-        <HeaderLink
-          title="Categories"
-          path="/categories"
-          toPage="All categories"
-        />
-        <CategoriesSection start={0} end={4} />
-      </div>
+      <HeaderLink
+        title="Categories"
+        path="/categories"
+        toPage="All categories"
+      />
+      <CategoriesSection start={0} end={4} />
       <DiscountCoupon />
-      <HeaderLink title="Sale" path="/discount" toPage="All sales" />
+
+      <HeaderLink 
+        title="Sale" 
+        path="/discount" 
+        toPage="All sales" 
+      />
       <DiscountedProductsSection start={4} end={8} />
     </div>
   )

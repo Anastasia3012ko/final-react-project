@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import styles from './Product.module.css'
@@ -7,11 +7,14 @@ import { fetchProductById } from '../../redux/slices/productsSlice'
 import { calculateDiscount } from '../../utils/calculateDiscount'
 import MyButton from '../../ui/MyButton/MyButton'
 import Counter from '../../components/Counter/Counter'
+import { addToCart } from '../../redux/slices/CartSlice'
 
 const Product = () => {
   const { productId } = useParams()
-  const { productById } = useSelector((state) => state.products)
   const dispatch = useDispatch()
+  const { productById } = useSelector((state) => state.products)
+  
+  const [quantity, setQuantity] = useState(1)
 
   console.log(productById)
 
@@ -28,15 +31,17 @@ const Product = () => {
     productById.discont_price
   )
 
-
+ const handleAddToCart = () => {
+  dispatch(addToCart({...productById, quantity}))
+  setQuantity(1)
+ }
 
   return (
     <div className={styles.wrapper}>
-
       <div className={styles.imageContainer}>
         <img
           className={styles.image}
-          src={`http://localhost:3333/${productById.image}`}
+          src={productById.image ? `http://localhost:3333/${productById.image}` : '/default.png'}
           alt="product"
         />
       </div>
@@ -56,8 +61,13 @@ const Product = () => {
         </div>
 
         <div className={styles.addToCart}>
-          <Counter/>
-          <MyButton>Add to car</MyButton>
+          <Counter
+            count={quantity}
+            increment={() => setQuantity(quantity => quantity + 1) }
+            decrement={() => setQuantity(quantity => Math.max(1, quantity - 1))}
+            
+          />
+          <MyButton onClick={handleAddToCart}>Add to car</MyButton>
         </div>
 
         <div className={styles.description}>

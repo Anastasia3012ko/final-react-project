@@ -9,7 +9,7 @@ const Banner = () => {
       <h1 className={styles.header}>Amazing Discounts on Pets Products!</h1>
       <div>
         <Link to="/discount">
-          <MyButton>Discounts</MyButton>
+          <MyButton>% Sale %</MyButton>
         </Link>
       </div>
     </div>
