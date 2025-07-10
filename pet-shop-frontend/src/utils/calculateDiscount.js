@@ -4,3 +4,4 @@ export function calculateDiscount(price, sale) {
        return  Math.round((discount/price)*100)
     } else return 0
 }
+

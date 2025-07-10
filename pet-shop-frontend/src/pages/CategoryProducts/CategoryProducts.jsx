@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link, useParams } from 'react-router-dom'
-import { fetchCategoryById } from '../../redux/slices/CategoriesSlice'
+import { useParams } from 'react-router-dom'
+import { fetchCategoryById } from '../../redux/slices/categoriesSlice'
 import ProductCard from '../../components/ProductCard/ProductCard'
 import styles from '../AllProducts/AllProducts.module.css'
 
@@ -34,14 +34,13 @@ const CategoryProducts = () => {
       <ul className={styles.list}>
         {currentCategory.data.map((product) => (
           <li key={product.id}>
-            <Link to={`/products/${product.id}`}>
-              <ProductCard
-                image={`http://localhost:3333/${product.image}`}
-                title={product.title}
-                price={product.price}
-                sale={product.discont_price}
-              />
-            </Link>
+            <ProductCard
+              image={`http://localhost:3333/${product.image}`}
+              title={product.title}
+              price={product.price}
+              sale={product.discont_price}
+              product={product}
+            />
           </li>
         ))}
       </ul>

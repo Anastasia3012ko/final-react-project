@@ -22,7 +22,7 @@ const DiscountCoupon = () => {
         formData
       )
 
-      if (response.data.success) {
+      if (response.data) {
         alert('Thank you! Check your email for your discount!')
         setFormData({ name: '', phone: '', email: '' })
         setButtonText('Request Submitted')

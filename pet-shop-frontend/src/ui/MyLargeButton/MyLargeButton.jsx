@@ -3,7 +3,11 @@ import styles from './MyLargeButton.module.css'
 
 const MyLargeButton = ({ children, onClick, type }) => {
   return (
-    <button className={styles.button} onClick={onClick} type={type}>
+    <button
+      className={styles.button}
+      onClick={onClick}
+      type={type}
+    >
       {children}
     </button>
   )

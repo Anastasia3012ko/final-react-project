@@ -1,15 +1,22 @@
 import React, { useState } from 'react'
 import styles from './OrderForm.module.css'
 import axios from 'axios'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import MyLargeButton from '../../ui/MyLargeButton/MyLargeButton'
+import { clearCart } from '../../redux/slices/CartSlice'
 
 const OrderForm = ({ length, totalPrice }) => {
   const products = useSelector(state => state.cart.items)
+    const productsByOrder = products.map(product => ({
+  id: product.id,
+  quantity: product.quantity
+}))
+
+  const dispatch = useDispatch()
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    email: '',
-    products,
+    email: ''
   })
   const [buttonText, setButtonText] = useState('Order')
   
@@ -21,27 +28,37 @@ const OrderForm = ({ length, totalPrice }) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
+    const orderData = {
+        ...formData,
+        products: productsByOrder
+    }
+
     try {
       const response = await axios.post(
         'http://localhost:3333/order/send',
-        formData
+        orderData
       )
+    
 
-      if (response.data.success) {
-        alert('Congratulations!')
-        setFormData({ name: '', phone: '', email: '', products: [] })
+      if (response.data) {
         setButtonText('The Order is Placed')
+        alert('Congratulations! ')
+
+
+        dispatch(clearCart())
+        setFormData({ name: '', phone: '', email: '' })
+        
       } else {
         alert(
           'Something went wrong. Please try again!'
         )
         setFormData({ name: '', phone: '', email: '' })
-        setButtonText('Get a discount')
+        setButtonText('Order')
       }
     } catch (error) {
-      console.error('Error sending discount request:', error)
+      console.error('Error:', error)
       alert('Oops! We are having trouble connecting. Please try again later!')
-      setButtonText('Get a discount')
+      setButtonText('Order')
     }
   }
   return (

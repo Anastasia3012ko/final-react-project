@@ -5,10 +5,10 @@ import ProductInCart from '../../components/ProductInCart/ProductInCart'
 
 import EmptyCart from '../../components/EmptyCart/EmptyCart'
 import { useSelector } from 'react-redux'
+import OrderForm from '../../components/orderForm/orderForm'
 
 const Cart = () => {
   const { items, totalPrice } = useSelector((state) => state.cart)
-  
 
   if (items.length === 0) {
     return <EmptyCart />
@@ -21,6 +21,7 @@ const Cart = () => {
         <ul className={styles.list}>
           {items.map((item) => (
             <ProductInCart
+              key={item.id}
               id={item.id}
               image={`http://localhost:3333/${item.image}`}
               title={item.title}
@@ -31,7 +32,7 @@ const Cart = () => {
             />
           ))}
         </ul>
-        <div className={styles.order}>
+        {/* <div className={styles.order}>
           <h4>Order details</h4>
           <p className={styles.orderText}>{items.length} items</p>
           <div className={styles.totalPrice}>
@@ -39,7 +40,8 @@ const Cart = () => {
           <h3>$ {totalPrice}</h3>
           </div>
           
-        </div>
+        </div>*/}
+        <OrderForm totalPrice={totalPrice} length={items.length} />
       </div>
     </div>
   )
