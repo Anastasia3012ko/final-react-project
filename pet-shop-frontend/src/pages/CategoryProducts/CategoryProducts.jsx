@@ -13,14 +13,20 @@ const CategoryProducts = () => {
   const { currentCategory, loading, error } = useSelector(
     (state) => state.categories
   )
+
+  const products = currentCategory?.data || []
   const [filteredProducts, setFilteredProducts] = useState([])
 
   useEffect(() => {
     dispatch(fetchCategoryById(categoryId))
   }, [dispatch, categoryId])
+
   useEffect(() => {
-    setFilteredProducts(currentCategory.data)
-  }, [currentCategory.data])
+    
+    if (products.length > 0) {
+      setFilteredProducts(products)
+    }
+  }, [products])
 
   if (loading || !currentCategory) {
     return <p>Loading category...</p>
@@ -30,16 +36,20 @@ const CategoryProducts = () => {
     return <p>Error: {error}</p>
   }
 
+  const productsToShow = filteredProducts?.length > 0 ? filteredProducts : products
+    
+
   return (
     <div className={styles.wrapper}>
       <ProductsFilter
         products={currentCategory.data}
         onFilter={setFilteredProducts}
+        showDiscount={true}
       />
       <h3>{currentCategory.category.title}</h3>
 
       <ul className={styles.list}>
-        {filteredProducts.map((product) => (
+        {productsToShow.map((product) => (
           <li key={product.id}>
             <ProductCard
               image={`http://localhost:3333/${product.image}`}

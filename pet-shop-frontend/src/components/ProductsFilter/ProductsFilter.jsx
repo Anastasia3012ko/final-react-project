@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styles from './ProductsFilter.module.css'
 
-const ProductsFilter = ({ products, onFilter }) => {
+const ProductsFilter = ({ products, onFilter, showDiscount }) => {
   const [discount, setDiscount] = useState(false)
   const [minPrice, setMinPrice] = useState('')
   const [maxPrice, setMaxPrice] = useState('')
@@ -23,10 +23,10 @@ const ProductsFilter = ({ products, onFilter }) => {
     }
 
     if (sortOrder === 'asc') {
-      filtered.sort((a, b) => a.price - b.price)
-    } else if (sortOrder === 'desc') {
-      filtered.sort((a, b) => b.price - a.price)
-    }
+  filtered.sort((a, b) => actualPrice(a) - actualPrice(b))
+} else if (sortOrder === 'desc') {
+  filtered.sort((a, b) => actualPrice(b) - actualPrice(a))
+}
 
     onFilter(filtered)
   }, [products, minPrice, maxPrice, sortOrder, discount, onFilter])
@@ -51,6 +51,7 @@ const ProductsFilter = ({ products, onFilter }) => {
         />
       </div>
 
+    {showDiscount && (
       <div className={styles.filterPrice}>
         <p className={styles.par}>Discounted items</p>
         <input
@@ -59,6 +60,8 @@ const ProductsFilter = ({ products, onFilter }) => {
           onChange={(e) => setDiscount(e.target.checked)}
         />
       </div>
+      )
+    }
 
       <div className={styles.filterPrice}>
         <p className={styles.par}>Sorted</p>

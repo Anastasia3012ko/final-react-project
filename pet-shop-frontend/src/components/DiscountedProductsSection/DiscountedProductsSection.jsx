@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchProducts } from '../../redux/slices/productsSlice'
 import ProductCard from '../ProductCard/ProductCard'
 
-const DiscountedProductsSection = ({ start, end }) => {
+const DiscountedProductsSection = ( { productsFiltered, start, end }) => {
   const { products, loading } = useSelector((state) => state.products)
   const dispatch = useDispatch()
 
@@ -20,10 +20,12 @@ const DiscountedProductsSection = ({ start, end }) => {
     (product) => product.discont_price !== null
   )
 
+  const productsToShow = productsFiltered?.length > 0 ? productsFiltered : discountProducts
+
   return (
     <ul className={styles.list}>
-      {discountProducts.length > 0 &&
-        discountProducts.slice(start, end).map((product) => (
+      {
+        productsToShow.slice(start, end).map((product) => (
           <li key={product.id} className={styles.item}>
             <ProductCard
               image={`http://localhost:3333/${product.image}`}

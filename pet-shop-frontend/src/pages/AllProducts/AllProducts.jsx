@@ -10,7 +10,6 @@ const AllProducts = () => {
   const dispatch = useDispatch()
   const [filteredProducts, setFilteredProducts] = useState([])
 
-  console.log(filteredProducts)
   useEffect(() => {
     dispatch(fetchProducts())
   }, [dispatch])
@@ -23,7 +22,11 @@ const AllProducts = () => {
     <div className={styles.wrapper}>
       <h3>All products</h3>
 
-      <ProductsFilter products={products} onFilter={setFilteredProducts} />
+      <ProductsFilter
+        products={products}
+        onFilter={setFilteredProducts}
+        showDiscount={true}
+      />
 
       <ul className={styles.list}>
         {filteredProducts.length > 0 &&
