@@ -25,6 +25,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  gap: 32px;
   font-size: 20px;
   font-weight: 500;
 }
