@@ -43,3 +43,30 @@
 .input::placeholder {
   color: white;
 }
+@media all and (max-width: 800px) {
+  .container {
+     flex-direction: column;
+  }
+  .forSale {
+    align-self: center;
+    padding-bottom: 20px;
+  }
+  
+}
+@media all and (max-width: 500px) {
+  .headerDiscount {
+    text-align: center;
+  }
+  .input {
+  padding: 8px 16px;
+ 
+ 
+  font-size: 18px;
+  font-weight: 500;
+  background-color: var(--primary-color);
+}
+.forSale {
+  padding: 10px;
+}
+  
+}

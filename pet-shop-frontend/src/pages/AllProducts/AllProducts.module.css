@@ -10,3 +10,12 @@
   justify-content: center;
   gap: 32px;
 }
+
+@media all and (max-width: 500px) {
+  .wrapper {
+    gap: 25px;
+    align-items: center;
+
+  }
+}
+

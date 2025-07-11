@@ -40,3 +40,10 @@
 .input::placeholder {
   color: var(rgb(139, 139, 139));
 }
+@media all and (max-width: 800px) {
+   .form {
+    align-self: center;
+    
+   }  
+
+}

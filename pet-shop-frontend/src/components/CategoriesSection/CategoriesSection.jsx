@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchCategories } from '../../redux/slices/CategoriesSlice'
+import { fetchCategories } from '../../redux/slices/categoriesSlice'
 import styles from './CategoriesSection.module.css'
 import { Link } from 'react-router-dom'
 import CategoryCard from '../CategoryCard/CategoryCard'
@@ -16,11 +16,12 @@ const CategoriesSection = ({ start, end }) => {
     dispatch(fetchCategories())
   }, [dispatch])
 
-  if (loading) {
-    return <p>Loading...</p>
+  if (loading || !categories) {
+    return <p>Loading ...</p>
   }
+
   if (error) {
-    return <h4>Error: {error}</h4>
+    return <p>Error: {error}</p>
   }
 
   return (

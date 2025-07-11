@@ -7,25 +7,19 @@ import { useDispatch } from 'react-redux'
 import { addToCart } from '../../redux/slices/CartSlice'
 import { useNavigate } from 'react-router-dom'
 
-
-
 const ProductCard = ({ image, title, price, sale, product }) => {
   const discount = calculateDiscount(price, sale)
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
- const handleAddToCart = (e) => {
-   e.stopPropagation()
-  
-   dispatch(addToCart({...product}))
+  const handleAddToCart = (e) => {
+    e.stopPropagation()
 
+    dispatch(addToCart({ ...product }))
   }
   const handleCardClick = () => {
     navigate(`/products/${product.id}`)
   }
-  
-
-
 
   return (
     <div className={styles.item} onClick={handleCardClick}>

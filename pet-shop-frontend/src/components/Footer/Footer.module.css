@@ -41,3 +41,13 @@
   display: flex;
   gap: 18px;
 }
+@media all and (max-width: 500px) { 
+  .about {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .contactOne, .contactTwo {
+    padding: 16px;
+  }
+
+}

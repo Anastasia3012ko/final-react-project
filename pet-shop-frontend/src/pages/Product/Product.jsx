@@ -10,20 +10,22 @@ import Counter from '../../components/Counter/Counter'
 import { addToCart } from '../../redux/slices/CartSlice'
 
 const Product = () => {
-  const { productId } = useParams()
-  const dispatch = useDispatch()
-  const { productById } = useSelector((state) => state.products)
   
+  const dispatch = useDispatch()
+  const { productById, loading, error } = useSelector((state) => state.products)
+  const { productId } = useParams()
   const [quantity, setQuantity] = useState(1)
-
-  console.log(productById)
 
   useEffect(() => {
     dispatch(fetchProductById(productId))
   }, [dispatch, productId])
 
-  if (!productById || !productById.id) {
-    return <div>Loading product...</div>
+  if (loading || !productById) {
+    return <p>Loading ...</p>
+  }
+
+  if (error) {
+    return <p>Error: {error}</p>
   }
 
   const discount = calculateDiscount(

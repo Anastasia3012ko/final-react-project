@@ -23,10 +23,10 @@ const ProductsFilter = ({ products, onFilter, showDiscount }) => {
     }
 
     if (sortOrder === 'asc') {
-  filtered.sort((a, b) => actualPrice(a) - actualPrice(b))
-} else if (sortOrder === 'desc') {
-  filtered.sort((a, b) => actualPrice(b) - actualPrice(a))
-}
+      filtered.sort((a, b) => actualPrice(a) - actualPrice(b))
+    } else if (sortOrder === 'desc') {
+      filtered.sort((a, b) => actualPrice(b) - actualPrice(a))
+    }
 
     onFilter(filtered)
   }, [products, minPrice, maxPrice, sortOrder, discount, onFilter])
@@ -51,17 +51,16 @@ const ProductsFilter = ({ products, onFilter, showDiscount }) => {
         />
       </div>
 
-    {showDiscount && (
-      <div className={styles.filterPrice}>
-        <p className={styles.par}>Discounted items</p>
-        <input
-          type="checkbox"
-          value={discount}
-          onChange={(e) => setDiscount(e.target.checked)}
-        />
-      </div>
-      )
-    }
+      {showDiscount && (
+        <div className={styles.filterPrice}>
+          <p className={styles.par}>Discounted items</p>
+          <input
+            type="checkbox"
+            value={discount}
+            onChange={(e) => setDiscount(e.target.checked)}
+          />
+        </div>
+      )}
 
       <div className={styles.filterPrice}>
         <p className={styles.par}>Sorted</p>
@@ -80,4 +79,3 @@ const ProductsFilter = ({ products, onFilter, showDiscount }) => {
 }
 
 export default ProductsFilter
-

@@ -18,11 +18,7 @@ const Homepage = () => {
       <CategoriesSection start={0} end={4} />
       <DiscountCoupon />
 
-      <HeaderLink 
-        title="Sale" 
-        path="/discount" 
-        toPage="All sales" 
-      />
+      <HeaderLink title="Sale" path="/discount" toPage="All sales" />
       <DiscountedProductsSection start={4} end={8} />
     </div>
   )

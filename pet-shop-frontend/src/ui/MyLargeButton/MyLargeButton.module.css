@@ -20,3 +20,10 @@
     background-color: var(--color-background-gray);
     color: var(--primary-color);
 }
+@media all and (max-width: 500px) {
+  .button {
+    font-size: 18px;
+    padding-block: 8px;
+
+  }
+}

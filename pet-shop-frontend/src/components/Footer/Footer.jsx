@@ -3,9 +3,6 @@ import Instagram from '../../assets/icons/instagram.svg'
 import WhatsApp from '../../assets/icons/whatsapp.svg'
 
 const Footer = () => {
-  const f = async() => {
-    
-  }
   return (
     <div className={styles.footer}>
       <h3>Contact</h3>

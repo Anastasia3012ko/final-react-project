@@ -20,7 +20,7 @@ const DiscountedProductsSection = ( { productsFiltered, start, end }) => {
     (product) => product.discont_price !== null
   )
 
-  const productsToShow = productsFiltered?.length > 0 ? productsFiltered : discountProducts
+  const productsToShow = productsFiltered?.length ? productsFiltered : discountProducts
 
   return (
     <ul className={styles.list}>

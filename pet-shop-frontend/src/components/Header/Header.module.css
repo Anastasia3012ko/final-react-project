@@ -1,4 +1,5 @@
 .header {
+.header {
   padding: 30px 0;
   width: 94.5%;
   margin-bottom: 40px;
@@ -40,4 +41,31 @@
 }
 .block {
   display: none;
+}
+
+@media all and (max-width: 500px) {
+  .links {
+    align-self: flex-end;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .link {
+    font-size: 16px;
+  }
+  .cart {
+    align-self: flex-start;
+  }
+  .logo {
+    max-width: 50px;
+    width: 100%;
+  }
+  .cartImg {
+    max-width: 40px;
+    width: 100%;
+  }
+  .countProducts {
+    width: 25px;
+    height: 25px;
+  }
+}
 }

@@ -41,7 +41,7 @@ const DiscountCoupon = () => {
   }
 
   return (
-    <div>
+    
       <div className={styles.discount}>
         <h3 className={styles.headerDiscount}>5% off on the first order</h3>
         <div className={styles.container}>
@@ -78,7 +78,7 @@ const DiscountCoupon = () => {
           </form>
         </div>
       </div>
-    </div>
+    
   )
 }
 

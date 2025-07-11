@@ -6,7 +6,7 @@ import ProductCard from '../../components/ProductCard/ProductCard'
 import ProductsFilter from '../../components/ProductsFilter/ProductsFilter'
 
 const AllProducts = () => {
-  const products = useSelector((state) => state.products.products)
+  const { products, loading, error } = useSelector((state) => state.products)
   const dispatch = useDispatch()
   const [filteredProducts, setFilteredProducts] = useState([])
 
@@ -17,6 +17,14 @@ const AllProducts = () => {
   useEffect(() => {
     setFilteredProducts(products)
   }, [products])
+
+  if (loading || !products) {
+    return <p>Loading ...</p>
+  }
+
+  if (error) {
+    return <p>Error: {error}</p>
+  }
 
   return (
     <div className={styles.wrapper}>

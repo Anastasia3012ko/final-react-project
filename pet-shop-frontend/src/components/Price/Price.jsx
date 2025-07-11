@@ -6,7 +6,7 @@ const Price = ({sale, price}) => {
     <div className={styles.cost}>
               {sale ? (
                 <>
-                  <h5 className={styles.price}>${sale}</h5>
+                  <h4 className={styles.price}>${sale}</h4>
                   <p className={styles.sale}>${price}</p>
                 </>
               ) : (

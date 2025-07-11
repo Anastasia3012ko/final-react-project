@@ -16,7 +16,7 @@ const Header = () => {
             isActive ? styles.activeLink : styles.link
           }
         >
-          <img src={Logo} alt="logo" />
+          <img className={styles.logo} src={Logo} alt="logo" />
         </NavLink>
         <div className={styles.links}>
           <NavLink
@@ -60,7 +60,7 @@ const Header = () => {
             isActive ? styles.activeLink : styles.link
           }
         >
-          <img src={Basket} alt="cart" />
+          <img className={styles.cartImg} src={Basket} alt="cart" />
         </NavLink>
         </div>
         

@@ -19,3 +19,12 @@
   border: 2px solid var(--text-color);
   color: var(--text-color);
 }
+ @media all and (max-width: 500px) {
+  .button {
+    font-size: 18px;
+    padding-block: 8px;
+
+  }
+  
+  
+}

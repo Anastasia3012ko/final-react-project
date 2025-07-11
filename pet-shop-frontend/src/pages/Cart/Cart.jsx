@@ -32,15 +32,6 @@ const Cart = () => {
             />
           ))}
         </ul>
-        {/* <div className={styles.order}>
-          <h4>Order details</h4>
-          <p className={styles.orderText}>{items.length} items</p>
-          <div className={styles.totalPrice}>
-            <p className={styles.orderText}>Total</p>
-          <h3>$ {totalPrice}</h3>
-          </div>
-          
-        </div>*/}
         <OrderForm totalPrice={totalPrice} length={items.length} />
       </div>
     </div>

@@ -29,7 +29,7 @@ const CategoryProducts = () => {
   }, [products])
 
   if (loading || !currentCategory) {
-    return <p>Loading category...</p>
+    return <p>Loading ...</p>
   }
 
   if (error) {
