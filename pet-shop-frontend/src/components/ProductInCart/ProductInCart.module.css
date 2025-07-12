@@ -47,14 +47,15 @@
   display: flex;
   gap: 32px;
 }
-
-@media all and (max-width: 500px) {
-  .wrapper {
+@media all and (max-width: 1200px) {
+   .wrapper {
     flex-direction: column;
     height: auto;
     align-items: center;
     gap: 10px;
   }
+}
+@media all and (max-width: 500px) {
   .product {
     gap: 16px;
     padding: 10px;

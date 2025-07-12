@@ -40,7 +40,7 @@
 .input::placeholder {
   color: var(rgb(139, 139, 139));
 }
-@media all and (max-width: 800px) {
+@media all and (max-width: 1000px) {
   .form {
     align-self: center;
     gap: 16px;

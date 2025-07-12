@@ -7,7 +7,7 @@ const EmptyCart = () => {
   return (
     <div className={styles.wrapper}>
       <p>Looks like you have no items in your basket currently.</p>
-      <Link to="/">
+      <Link to="/products">
         <MyButton>Continue Shopping</MyButton>
       </Link>
     </div>
