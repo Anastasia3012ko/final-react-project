@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './Cart.module.css'
 import HeaderLink from '../../components/HeaderLink/HeaderLink'
 import ProductInCart from '../../components/ProductInCart/ProductInCart'
@@ -6,14 +6,17 @@ import ProductInCart from '../../components/ProductInCart/ProductInCart'
 import EmptyCart from '../../components/EmptyCart/EmptyCart'
 import { useSelector } from 'react-redux'
 import OrderForm from '../../components/orderForm/orderForm'
+import ModalWindow from '../../components/ModalWindow/ModalWindow'
 
 const Cart = () => {
   const { items, totalPrice } = useSelector((state) => state.cart)
-
-  if (items.length === 0) {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [modalMessage, setModalMessage] = useState('')
+  const [isError, setIsError] = useState(false)
+  const [isOrderComplete, setIsOrderComplete] = useState(false)
+  if (items.length === 0 && !isModalOpen && !isOrderComplete) {
     return <EmptyCart />
   }
-
   return (
     <div className={styles.wrapper}>
       <HeaderLink title="Shopping cart" path="/" toPage="Back to the store" />
@@ -32,8 +35,25 @@ const Cart = () => {
             />
           ))}
         </ul>
-        <OrderForm totalPrice={totalPrice} length={items.length} />
+        <OrderForm
+          totalPrice={totalPrice}
+          length={items.length}
+          setIsModalOpen={setIsModalOpen}
+          setModalMessage={setModalMessage}
+          setIsError={setIsError}
+          setIsOrderComplete={setIsOrderComplete}
+        />
+     
       </div>
+         <ModalWindow
+          isOpen={isModalOpen}
+          onClose={() => {
+            setIsModalOpen(false)
+            setIsOrderComplete(false)
+          }}
+          message={modalMessage}
+          isError={isError}
+        />
     </div>
   )
 }

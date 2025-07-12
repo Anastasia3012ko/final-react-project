@@ -36,9 +36,33 @@
     font-size: 20px;
     font-weight: 500;
     
-    align-self: center;
+    transition: transform 0.3s ease; 
+
+}
+.button:hover {
+  align-self: center;
+  transform: scale(1.2);
 }
 .price {
   display: flex;
   gap: 32px;
+}
+
+@media all and (max-width: 500px) {
+  .wrapper {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    gap: 10px;
+  }
+  .product {
+    gap: 16px;
+    padding: 10px;
+    align-items: center;
+  }
+  .price {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
 }

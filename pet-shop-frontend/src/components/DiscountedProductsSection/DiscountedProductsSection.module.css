@@ -5,3 +5,8 @@
   flex-wrap: wrap;
   gap: 32px;
 }
+@media all and (max-width: 500px) {
+  .list {
+    justify-content: center;
+  }
+}

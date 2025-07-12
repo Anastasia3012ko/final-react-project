@@ -9,6 +9,7 @@ import NotFound from '../../pages/NotFound/NotFound'
 import '../../styles/App.css'
 import { Routes, Route } from 'react-router-dom'
 import Layout from '../Layout/Layout'
+import ScrollToTop from '../ScrollToTop/ScrollToTop'
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/cart" element={<Layout><Cart /></Layout>} />
           <Route path="*" element={<Layout><NotFound /></Layout>} />
         </Routes>
+        <ScrollToTop/>
      
     </div>
   )

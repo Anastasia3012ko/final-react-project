@@ -1,5 +1,5 @@
 .form {
-  max-width: 548px;
+  max-width: 550px;
   width: 100%;
   height: 582px;
   padding: 32px;
@@ -26,9 +26,9 @@
   align-items: self-end;
 }
 .inputField {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 .input {
   padding: 16px 32px;
@@ -41,9 +41,15 @@
   color: var(rgb(139, 139, 139));
 }
 @media all and (max-width: 800px) {
-   .form {
+  .form {
     align-self: center;
-    
-   }  
+    gap: 16px;
+    height: auto;
+  }
+  .input {
+    padding: 8px 16px;
 
+    font-size: 16px;
+    font-weight: 300;
+  }
 }

@@ -16,28 +16,5 @@
   margin-top: 80px;
 }
 
-@media all and (max-width: 500px) {
-  .banner {
-    align-items: center;
-  }
-  .header {
-    .banner {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  background-image: url('../../assets/images/baner.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: var(--border-radius);
-  padding-left: 40px;
-  height: 600px;
-  margin-top: 0;
-}
-.header {
-  color: white;
-  margin-top: 80px;
-}
-  }
-  
-}
+ 
+

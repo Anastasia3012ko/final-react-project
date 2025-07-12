@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from './Header.module.css'
 import Logo from '../../assets/icons/logo.svg'
-import Basket from '../../assets/icons/basket.svg'
 import { NavLink } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const Header = () => {
   const items = useSelector(state => state.cart.items)
@@ -60,7 +60,10 @@ const Header = () => {
             isActive ? styles.activeLink : styles.link
           }
         >
-          <img className={styles.cartImg} src={Basket} alt="cart" />
+          <ShoppingCartIcon sx={{ fontSize: {
+            xs: 40,
+            sm: 60
+          } }}/>
         </NavLink>
         </div>
         

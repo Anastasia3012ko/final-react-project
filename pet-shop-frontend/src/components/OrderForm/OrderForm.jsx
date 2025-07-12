@@ -5,7 +5,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import { clearCart } from '../../redux/slices/CartSlice'
 import MyButton from '../../ui/MyButton/MyButton'
 
-const OrderForm = ({ length, totalPrice }) => {
+const OrderForm = ({
+  length,
+  totalPrice,
+  setIsModalOpen,
+  setModalMessage,
+  setIsError,
+  setIsOrderComplete
+}) => {
   const products = useSelector((state) => state.cart.items)
   const productsByOrder = products.map((product) => ({
     id: product.id,
@@ -39,64 +46,77 @@ const OrderForm = ({ length, totalPrice }) => {
       )
 
       if (response.data) {
+        setModalMessage(
+          'Your order has been successfully placed on the website. A manager will contact you shortly to confirm your order.'
+        )
+        setIsError(false)
         setButtonText('The Order is Placed')
-        alert('Congratulations! ')
-
+        setIsModalOpen(true)
+        setIsOrderComplete(true);
         dispatch(clearCart())
         setFormData({ name: '', phone: '', email: '' })
       } else {
-        alert('Something went wrong. Please try again!')
+        setModalMessage('Something went wrong. Please try again!')
+        setIsError(true)
         setFormData({ name: '', phone: '', email: '' })
         setButtonText('Order')
       }
     } catch (error) {
       console.error('Error:', error)
-      alert('Oops! We are having trouble connecting. Please try again later!')
+      setIsError(true)
+      setModalMessage(
+        'Oops! We are having trouble connecting. Please try again later!'
+      )
       setButtonText('Order')
     }
-  }
-  return (
-    <form className={styles.form} onSubmit={handleSubmit}>
-      <div className={styles.headerForm}>
-        <h4 className={styles.header}>Order details</h4>
-        <h4 className={styles.orderText}>{length} items</h4>
-        <div className={styles.totalPrice}>
-          <h4 className={styles.orderText}>Total</h4>
-          <h3>$ {totalPrice}</h3>
-        </div>
-      </div>
-      <div className={styles.inputField}>
-        <input
-          className={styles.input}
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          placeholder="Name"
-          required
-        />
-        <input
-          className={styles.input}
-          type="tel"
-          name="phone"
-          value={formData.phone}
-          onChange={handleChange}
-          placeholder="Phone number"
-          required
-        />
-        <input
-          className={styles.input}
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          placeholder="Email"
-          required
-        />
-      </div>
 
-      <MyButton type="submit">{buttonText}</MyButton>
-    </form>
+    setIsModalOpen(true)
+  }
+
+  return (
+    
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <div className={styles.headerForm}>
+          <h4 className={styles.header}>Order details</h4>
+          <h4 className={styles.orderText}>{length} items</h4>
+          <div className={styles.totalPrice}>
+            <h4 className={styles.orderText}>Total</h4>
+            <h3>$ {totalPrice}</h3>
+          </div>
+        </div>
+        <div className={styles.inputField}>
+          <input
+            className={styles.input}
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Name"
+            required
+          />
+          <input
+            className={styles.input}
+            type="tel"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            placeholder="Phone number"
+            required
+          />
+          <input
+            className={styles.input}
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Email"
+            required
+          />
+        </div>
+
+        <MyButton type="submit">{buttonText}</MyButton>
+      </form>
+   
   )
 }
 

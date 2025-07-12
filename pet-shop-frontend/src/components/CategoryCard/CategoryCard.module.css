@@ -4,6 +4,13 @@
   align-items: center;
   gap: 16px;
   list-style: none;
+  box-shadow: 1px 1px 1px var(--text-color-secondary);
+  border-radius: var(--border-radius);
+  transition: transform 0.3s ease;
+}
+.item:hover {
+  transform: scale(1.05); 
+  z-index: 10;
 }
 .image {
   max-width: 316px;

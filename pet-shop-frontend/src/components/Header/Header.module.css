@@ -24,12 +24,15 @@
 .cart {
   align-self: center;
   position: relative;
+  transition: transform 0.3s ease;
 }
 .countProducts {
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
+  left: 40px;
+  top: -10px;
   background-color: var(--primary-color);
   color: white;
   border-radius: 50%;
@@ -41,30 +44,38 @@
 .block {
   display: none;
 }
+.logo {
+  transition: transform 0.3s ease;
+}
+.logo:hover, .cart:hover {
+  transform: scale(1.2); 
+  z-index: 10;
+}
 
 @media all and (max-width: 500px) {
   .links {
     align-self: flex-end;
     flex-direction: column;
-    gap: 16px;
+    gap: 10px;
   }
   .link {
     font-size: 16px;
   }
   .cart {
     align-self: flex-start;
+    
   }
+  
   .logo {
     max-width: 50px;
     width: 100%;
   }
-  .cartImg {
-    max-width: 40px;
-    width: 100%;
-  }
+
   .countProducts {
-    width: 25px;
-    height: 25px;
+    width: 22px;
+    height: 22px;
+    left:20px;
+  
   }
 }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './ProductInCart.module.css'
 import { useDispatch } from 'react-redux'
-
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import Counter from '../Counter/Counter'
 import Price from '../Price/Price'
 import { removeFromCart, updateQuantity } from '../../redux/slices/CartSlice'
@@ -19,7 +19,7 @@ const ProductInCart = ({ id, image, title, price, sale, quantity }) => {
             className={styles.button}
             onClick={() => dispatch(removeFromCart({ id }))}
           >
-            x
+            <DeleteForeverIcon/>
           </button>
         </div>
 
@@ -41,3 +41,5 @@ const ProductInCart = ({ id, image, title, price, sale, quantity }) => {
 }
 
 export default ProductInCart
+
+
